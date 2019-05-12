@@ -1,0 +1,20 @@
+<h2>Signup</h2>
+<hr>
+<div>
+  <div *ngIf="!(loginAttemptSucceeded === undefined)">
+    <div *ngIf="!loginAttemptSucceeded">Username already taken.</div>
+    <div *ngIf="loginAttemptSucceeded">Account registered.</div>
+  </div>
+
+  <label for="username">Enter Username:</label>
+  <p>Username: {{username | trimPipe}}</p>
+  <input type="text" id="username" [(ngModel)]="username">
+
+  <label for="password">Enter Password</label>
+  <input type="password" id="password" [(ngModel)]="password">
+
+  <label for="password-confirmation">Confirm Password:</label>
+  <input type="password" id="password-confirmation" [(ngModel)]="passwordConfirmation">
+
+  <input type="submit" [disabled]="!formValidation()" (click)="submit()">
+</div>

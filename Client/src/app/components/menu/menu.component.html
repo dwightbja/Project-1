@@ -1,0 +1,36 @@
+<a class="logo" id=logo class="img-fluid" alt="Responsive image"></a>
+<div class="container">
+  <div class="row justify-content-center">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" routerLink="home"
+          aria-controls="home" aria-selected="true">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="profile-tab" data-toggle="tab" href="#profile" role="tab" routerLink="reimb"
+          aria-controls="profile" aria-selected="false">New Reimbursement</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+          routerLink="viewreimb" aria-selected="false">View All Reimbursement</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab"  data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+          routerLink="resolvereimb" aria-selected="false" [class.hidden] = "isRegular()" >Resolve Reimbursement</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+          aria-selected="false" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"></div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"></div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"></div>
+  <div class="tab-pane fade" id="reslovereimb" role="tabpanel" aria-labelledby="reslovereimb"></div>
+</div>
+
+
+<router-outlet></router-outlet>

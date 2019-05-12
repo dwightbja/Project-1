@@ -1,0 +1,27 @@
+<br>
+<h2>Reimbursments</h2>
+<div class="row justify-content-center">
+  <div class="col-6">
+
+  </div>
+</div>
+<br>
+<div class="row justify-content-center">
+  <div class="col-9">
+    <div id="listbox">
+      <div *ngFor="let listreimb of reimblist" class="listreimb">
+        Reimbursement ID#: {{listreimb.reimbursementID}}
+        <br>
+        Amount : {{listreimb.reimbursementAmount}}
+        <br>
+        Date Submitted : {{listreimb.reimbursementSubmitted | date: 'yyyy-MM-dd HH:mm'}}
+        <br>
+        Date Resolved : {{listreimb.reimbursementResolved}}
+        <br>
+        Description : {{listreimb.reimbursementDescription}}
+        <br>
+        
+      </div>
+    </div>
+  </div>
+</div>

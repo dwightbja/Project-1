@@ -1,0 +1,22 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-9" >
+        <img src="assets\image\getreimbursed.jpg" id ="banner" class="img-fluid" alt="Responsive image">
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-9 ">
+      <form class= "form-group">
+          <p *ngIf="lastStatus === 400">Username or password is incorrect.</p>
+          <p *ngIf="lastStatus === 500">Unknown server error occurred.</p>
+          <p *ngIf="lastStatus === 0">Server unreachable.</p>
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" [(ngModel)]="username" [ngModelOptions]="{standalone: true}" aria-describedby="emailHelp" placeholder="Enter username">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" placeholder="Password">
+        <button type="submit" (click) = "submit()" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+  </div>
+</div>

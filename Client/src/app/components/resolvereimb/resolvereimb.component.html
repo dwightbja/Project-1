@@ -1,0 +1,31 @@
+<div id="listbox"> Reimbursments</div>
+<div *ngFor="let listreimb of reimblist" class="listreimb">
+  <div class="row justify-content-center">
+    <div class="col-9">
+      <div id="boxlist">
+        Reimbursement ID#: {{listreimb.reimbursementID}}
+        <br>
+        Amount : {{listreimb.reimbursementAmount}}
+        <br>
+        Date Submitted : {{listreimb.reimbursementSubmitted | date: 'yyyy-MM-dd HH:mm'}}
+        <br>
+        Description : {{listreimb.reimbursementDescription}}
+        <br>
+        TypeID : {{listreimb.reimbursementTypeID}}
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-9">
+      <label for="reimbtype">Set Status: </label>
+      <select class="form-control" id="statusID" [(ngModel)]="statusID" name="statusID">
+        <option value="2">Approve</option>
+        <option value="3">Deny</option>
+      </select>
+      <button type="submit" class="btn btn-primary" (click)="resolve(listreimb.reimbursementID, statusID)"
+        id="resolve">Resolve</button>
+    </div>
+  </div>
+
+  <p class="titlebox" *ngIf="ifIsEmpty()">No Reimbursement Requests Found</p>
